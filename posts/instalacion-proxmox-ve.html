@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Instalación de Proxmox VE | Mois0n</title>
+  <meta name="description" content="Entrada técnica sobre la instalación de Proxmox VE como base de una infraestructura virtualizada.">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Mois0n</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+        <li><a href="../proyectos.html">Proyectos</a></li>
+        <li><a href="../blog.html">Blog técnico</a></li>
+        <li><a href="../certificaciones.html">Certificaciones</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+
+      <header class="post-header">
+        <p class="eyebrow">Virtualización · Infraestructura</p>
+        <h1>Instalación de Proxmox VE como base de laboratorio</h1>
+
+        <p class="post-intro">
+          Proxmox VE fue la base elegida para desplegar una infraestructura virtualizada
+          donde separar servicios, redes y funciones de seguridad.
+        </p>
+
+        <div class="tech-list">
+          <span>Proxmox VE</span>
+          <span>Virtualización</span>
+          <span>Linux</span>
+          <span>Infraestructura IT</span>
+        </div>
+      </header>
+
+      <section class="post-section">
+        <h2>Objetivo</h2>
+        <p>
+          El objetivo era disponer de una plataforma de virtualización flexible para
+          crear máquinas virtuales y contenedores, separando servicios como firewall,
+          servidor web, base de datos y automatización.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Por qué Proxmox VE</h2>
+        <p>
+          Proxmox VE permite gestionar máquinas virtuales y contenedores desde una
+          interfaz web, facilitando la administración de recursos, redes virtuales,
+          almacenamiento y servicios desplegados.
+        </p>
+
+        <ul class="post-list">
+          <li>Permite trabajar con máquinas virtuales y contenedores.</li>
+          <li>Facilita la creación de laboratorios técnicos.</li>
+          <li>Ofrece una interfaz de administración clara.</li>
+          <li>Encaja bien con proyectos de sistemas, redes y seguridad.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Planteamiento del entorno</h2>
+        <p>
+          La instalación se planteó sobre un equipo físico usado como servidor de
+          laboratorio. Desde Proxmox se desplegaron los distintos elementos del proyecto:
+          firewall, servicios web, base de datos y contenedores auxiliares.
+        </p>
+
+        <pre class="code-block"><code>Servidor físico
+   └── Proxmox VE
+        ├── Firewall IPFire
+        ├── Servidor web
+        ├── Base de datos
+        └── Contenedor para automatización</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Competencias demostradas</h2>
+        <ul class="post-list">
+          <li>Instalación de un hipervisor de virtualización.</li>
+          <li>Planificación de recursos hardware.</li>
+          <li>Organización de servicios mediante máquinas y contenedores.</li>
+          <li>Base para segmentación de red y despliegue seguro.</li>
+        </ul>
+      </section>
+
+      <section class="callout">
+        <h2>Conclusión</h2>
+        <p>
+          Proxmox VE permitió construir un entorno controlado, flexible y escalable
+          para desplegar el resto de la infraestructura del proyecto.
+        </p>
+
+        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mois0n — Portafolio profesional de sistemas, redes y ciberseguridad.</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
