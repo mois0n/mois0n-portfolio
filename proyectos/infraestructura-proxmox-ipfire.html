@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Infraestructura segura con Proxmox e IPFire | Mois0n</title>
+  <meta name="description" content="Proyecto de infraestructura segura con Proxmox VE, IPFire, aplicación web, base de datos, automatización con Python y segmentación de red.">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Mois0n</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+        <li><a href="../proyectos.html">Proyectos</a></li>
+        <li><a href="../blog.html">Blog técnico</a></li>
+        <li><a href="../certificaciones.html">Certificaciones</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="post">
+
+      <header class="post-header">
+        <p class="eyebrow">Proyecto destacado · Infraestructura IT · Seguridad</p>
+
+        <h1>Infraestructura segura con Proxmox VE, IPFire y aplicación web</h1>
+
+        <p class="post-intro">
+          Proyecto basado en el diseño e implantación de una infraestructura virtualizada
+          orientada a seguridad, segmentación de red, despliegue de servicios web,
+          base de datos y automatización mediante Python.
+        </p>
+
+        <div class="tech-list">
+          <span>Proxmox VE</span>
+          <span>IPFire</span>
+          <span>Linux</span>
+          <span>Apache</span>
+          <span>MySQL</span>
+          <span>phpMyAdmin</span>
+          <span>Python</span>
+          <span>Firewall</span>
+          <span>Redes</span>
+          <span>Seguridad</span>
+        </div>
+      </header>
+
+      <section class="post-section">
+        <h2>Resumen del proyecto</h2>
+
+        <p>
+          El proyecto consiste en la creación de una infraestructura IT virtualizada
+          utilizando Proxmox VE como plataforma principal. Sobre esta base se despliegan
+          distintos servicios separados por función: firewall, aplicación web, base de
+          datos, administración y automatización.
+        </p>
+
+        <p>
+          IPFire actúa como firewall principal, separando la red en zonas diferenciadas
+          para mejorar la seguridad y controlar el tráfico entre servicios internos,
+          servicios expuestos y salida hacia Internet.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Objetivo</h2>
+
+        <p>
+          El objetivo era construir un entorno práctico que integrara administración de
+          sistemas, redes, servicios web, base de datos y seguridad perimetral, simulando
+          una infraestructura real a pequeña escala.
+        </p>
+
+        <ul class="post-list">
+          <li>Diseñar una infraestructura virtualizada sobre Proxmox VE.</li>
+          <li>Separar servicios mediante zonas de red y firewall.</li>
+          <li>Desplegar una aplicación web conectada a base de datos.</li>
+          <li>Automatizar tareas mediante Python.</li>
+          <li>Aplicar criterios básicos de seguridad y documentación técnica.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Arquitectura general</h2>
+
+        <p>
+          La arquitectura se organizó separando los componentes principales según su
+          función. De esta forma, cada servicio queda aislado y se facilita el control
+          del tráfico entre ellos.
+        </p>
+
+        <pre class="code-block"><code>Servidor físico
+   └── Proxmox VE
+        ├── IPFire Firewall
+        │    ├── Zona RED    → salida/red externa
+        │    ├── Zona GREEN  → administración/red interna
+        │    └── Zona ORANGE → servicios web/DMZ
+        │
+        ├── Servidor Apache/PHP
+        ├── Base de datos MySQL
+        ├── phpMyAdmin
+        └── Contenedor Python para automatización</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Segmentación de red</h2>
+
+        <p>
+          Una de las partes más importantes del proyecto fue la segmentación de red.
+          En lugar de mantener todos los servicios en una única red plana, se separaron
+          las funciones mediante zonas.
+        </p>
+
+        <div class="content-grid">
+          <article class="content-card">
+            <h3>RED</h3>
+            <p>
+              Zona asociada a la conexión exterior o salida hacia Internet. Se considera
+              la zona menos confiable.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>GREEN</h3>
+            <p>
+              Zona interna de confianza, orientada a administración y gestión de servicios.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>ORANGE</h3>
+            <p>
+              Zona tipo DMZ destinada a alojar servicios que requieren una separación
+              adicional respecto a la red interna.
+            </p>
+          </article>
+        </div>
+
+        <p>
+          Esta segmentación permite controlar qué comunicaciones se permiten entre zonas
+          y reducir el impacto ante posibles fallos o exposiciones de servicios.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Servicios desplegados</h2>
+
+        <p>
+          El proyecto incluye el despliegue de servicios básicos para una aplicación web
+          funcional, separando la parte de servidor web, administración y base de datos.
+        </p>
+
+        <ul class="post-list">
+          <li><strong>Apache:</strong> servidor web para alojar la aplicación.</li>
+          <li><strong>PHP:</strong> lenguaje usado en la parte lógica de la aplicación.</li>
+          <li><strong>MySQL:</strong> base de datos para almacenar información de usuarios, productos y operaciones.</li>
+          <li><strong>phpMyAdmin:</strong> herramienta de administración de la base de datos durante el desarrollo.</li>
+          <li><strong>Python:</strong> automatización de comprobaciones relacionadas con el stock.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Automatización con Python</h2>
+
+        <p>
+          Se planteó un proceso de automatización para comprobar el stock de productos
+          almacenados en la base de datos. Cuando un producto baja de un umbral definido,
+          el sistema puede generar un aviso para facilitar la gestión.
+        </p>
+
+        <pre class="code-block"><code>Base de datos MySQL
+        │
+        ▼
+Script Python
+        │
+        ▼
+Consulta de productos
+        │
+        ▼
+Detección de bajo stock
+        │
+        ▼
+Generación de aviso</code></pre>
+
+        <p>
+          Esta parte del proyecto demuestra cómo conectar scripting con bases de datos
+          para resolver una necesidad práctica de administración.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Seguridad aplicada</h2>
+
+        <p>
+          El proyecto se orientó a mejorar la seguridad de la infraestructura mediante
+          aislamiento de servicios, control del tráfico y separación entre zonas.
+        </p>
+
+        <ul class="post-list">
+          <li>Uso de IPFire como firewall dedicado.</li>
+          <li>Separación de servicios mediante zonas de red.</li>
+          <li>Uso de una zona tipo DMZ para servicios web.</li>
+          <li>Control del tráfico entre redes.</li>
+          <li>Revisión de exposición antes de publicar documentación.</li>
+          <li>No publicación de credenciales, IPs reales ni configuraciones sensibles.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Problemas encontrados</h2>
+
+        <p>
+          Durante el desarrollo de una infraestructura de este tipo aparecen problemas
+          habituales relacionados con conectividad, exposición de servicios, reglas de
+          firewall, rutas, permisos y comunicación entre máquinas.
+        </p>
+
+        <p>
+          Estos problemas forman parte del valor del proyecto, ya que obligan a aplicar
+          diagnóstico, análisis de red, revisión de servicios y documentación de soluciones.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Competencias demostradas</h2>
+
+        <ul class="post-list">
+          <li>Administración de sistemas y servicios Linux.</li>
+          <li>Virtualización con Proxmox VE.</li>
+          <li>Diseño de redes segmentadas.</li>
+          <li>Uso de firewall dedicado con IPFire.</li>
+          <li>Despliegue de aplicación web con Apache, PHP y MySQL.</li>
+          <li>Administración de base de datos.</li>
+          <li>Automatización básica con Python.</li>
+          <li>Documentación técnica orientada a empleabilidad.</li>
+          <li>Criterio de seguridad al publicar proyectos técnicos.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Entradas relacionadas</h2>
+
+        <div class="content-grid">
+          <article class="content-card">
+            <h3>Segmentación de red con IPFire</h3>
+            <p>Explicación específica de las zonas RED, GREEN y ORANGE.</p>
+            <a href="../posts/segmentacion-red-ipfire.html" class="project-link">Leer entrada →</a>
+          </article>
+
+          <article class="content-card">
+            <h3>Instalación de Proxmox VE</h3>
+            <p>Base de virtualización utilizada para construir el laboratorio.</p>
+            <a href="../posts/instalacion-proxmox-ve.html" class="project-link">Leer entrada →</a>
+          </article>
+
+          <article class="content-card">
+            <h3>Apache, MySQL y phpMyAdmin</h3>
+            <p>Servicios web y base de datos desplegados en el entorno.</p>
+            <a href="../posts/despliegue-apache-mysql-phpmyadmin.html" class="project-link">Leer entrada →</a>
+          </article>
+
+          <article class="content-card">
+            <h3>Automatización con Python</h3>
+            <p>Control de stock y generación de avisos mediante scripting.</p>
+            <a href="../posts/automatizacion-stock-python.html" class="project-link">Leer entrada →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="post-section">
+        <h2>Mejoras futuras</h2>
+
+        <ul class="post-list">
+          <li>Integrar monitorización de servicios y recursos.</li>
+          <li>Mejorar la gestión de logs y alertas.</li>
+          <li>Aplicar hardening más completo en los servicios expuestos.</li>
+          <li>Documentar reglas de firewall de forma anonimizada.</li>
+          <li>Añadir diagramas visuales limpios de la arquitectura.</li>
+          <li>Ampliar la parte de ciberseguridad con pruebas controladas.</li>
+        </ul>
+      </section>
+
+      <section class="callout">
+        <h2>Conclusión</h2>
+
+        <p>
+          Este proyecto representa una base sólida para demostrar competencias en sistemas,
+          redes, virtualización y seguridad. Integra varias áreas clave de la administración
+          de infraestructuras IT y permite explicar no solo el resultado final, sino también
+          el proceso de diseño, despliegue, resolución de problemas y documentación.
+        </p>
+
+        <a href="../proyectos.html" class="btn btn-primary">Volver a proyectos</a>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mois0n — Portafolio profesional de sistemas, redes y ciberseguridad.</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
