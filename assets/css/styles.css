@@ -383,3 +383,21 @@ main {
   font-weight: 800;
   margin-top: 1rem;
 }
+
+.contact-card {
+  max-width: 850px;
+  background: rgba(17, 24, 39, 0.78);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-card h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
