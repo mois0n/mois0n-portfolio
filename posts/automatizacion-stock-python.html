@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Automatización de stock con Python | Mois0n</title>
+  <meta name="description" content="Entrada técnica sobre automatización de control de stock mediante Python y MySQL.">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Mois0n</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+        <li><a href="../proyectos.html">Proyectos</a></li>
+        <li><a href="../blog.html">Blog técnico</a></li>
+        <li><a href="../certificaciones.html">Certificaciones</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+
+      <header class="post-header">
+        <p class="eyebrow">Automatización · Python · MySQL</p>
+        <h1>Automatización de alertas de stock con Python</h1>
+
+        <p class="post-intro">
+          En esta entrada explico cómo planteé una automatización para comprobar el
+          stock de productos en una base de datos y generar avisos cuando las unidades
+          bajaban de un umbral definido.
+        </p>
+
+        <div class="tech-list">
+          <span>Python</span>
+          <span>MySQL</span>
+          <span>Automatización</span>
+          <span>Linux</span>
+          <span>Cron</span>
+        </div>
+      </header>
+
+      <section class="post-section">
+        <h2>Objetivo</h2>
+        <p>
+          El objetivo era evitar una revisión manual constante del inventario. Para ello,
+          se planteó un script que consultara la base de datos y detectara productos con
+          bajo stock.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Funcionamiento general</h2>
+        <p>
+          El script realiza una consulta sobre la base de datos, identifica productos
+          que cumplen la condición de bajo stock y genera un registro o aviso para su
+          posterior revisión.
+        </p>
+
+        <pre class="code-block"><code>Base de datos MySQL
+        │
+        ▼
+Script Python
+        │
+        ▼
+Comprobación de stock
+        │
+        ▼
+Registro de alerta / aviso</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Ventajas de automatizar</h2>
+        <ul class="post-list">
+          <li>Reduce tareas manuales repetitivas.</li>
+          <li>Permite detectar incidencias antes.</li>
+          <li>Mejora el control del inventario.</li>
+          <li>Demuestra integración entre scripting y base de datos.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Buenas prácticas de seguridad</h2>
+        <p>
+          En una publicación pública no se deben mostrar credenciales reales, cadenas de
+          conexión completas, usuarios de base de datos ni rutas internas sensibles.
+        </p>
+
+        <ul class="post-list">
+          <li>No publicar contraseñas de MySQL.</li>
+          <li>Usar variables de entorno o archivos protegidos.</li>
+          <li>Limitar permisos del usuario de base de datos.</li>
+          <li>Registrar eventos sin exponer información sensible.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Competencias demostradas</h2>
+        <ul class="post-list">
+          <li>Scripting básico con Python.</li>
+          <li>Consultas a base de datos MySQL.</li>
+          <li>Automatización de tareas.</li>
+          <li>Planificación de procesos programados.</li>
+        </ul>
+      </section>
+
+      <section class="callout">
+        <h2>Conclusión</h2>
+        <p>
+          La automatización del control de stock aporta valor porque conecta la aplicación
+          web con procesos automáticos de supervisión, acercando el proyecto a un caso
+          práctico más realista.
+        </p>
+
+        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mois0n — Portafolio profesional de sistemas, redes y ciberseguridad.</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
