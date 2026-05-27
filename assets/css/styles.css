@@ -401,3 +401,20 @@ main {
   color: #cbd5e1;
   margin-bottom: 1.5rem;
 }
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.cert-actions .btn {
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+}
+
+.cert-actions.multi {
+  align-items: flex-start;
+}
