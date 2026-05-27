@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Apache, MySQL y phpMyAdmin | Mois0n</title>
+  <meta name="description" content="Entrada técnica sobre el despliegue de Apache, MySQL y phpMyAdmin en una infraestructura virtualizada.">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Mois0n</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+        <li><a href="../proyectos.html">Proyectos</a></li>
+        <li><a href="../blog.html">Blog técnico</a></li>
+        <li><a href="../certificaciones.html">Certificaciones</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+
+      <header class="post-header">
+        <p class="eyebrow">Servicios web · Base de datos</p>
+        <h1>Despliegue de Apache, MySQL y phpMyAdmin</h1>
+
+        <p class="post-intro">
+          En esta entrada documento el planteamiento de los servicios web y de base de
+          datos utilizados para alojar una aplicación web dentro de una infraestructura
+          virtualizada.
+        </p>
+
+        <div class="tech-list">
+          <span>Apache</span>
+          <span>MySQL</span>
+          <span>phpMyAdmin</span>
+          <span>Linux</span>
+          <span>PHP</span>
+        </div>
+      </header>
+
+      <section class="post-section">
+        <h2>Objetivo</h2>
+        <p>
+          El objetivo era desplegar una aplicación web conectada a una base de datos,
+          separando los servicios y permitiendo su administración dentro de un entorno
+          de laboratorio controlado.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Servicios utilizados</h2>
+
+        <div class="content-grid">
+          <article class="content-card">
+            <h3>Apache</h3>
+            <p>
+              Servidor web utilizado para servir la aplicación desarrollada en PHP,
+              HTML y CSS.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>MySQL</h3>
+            <p>
+              Sistema gestor de base de datos utilizado para almacenar usuarios,
+              productos, compras y datos de la aplicación.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>phpMyAdmin</h3>
+            <p>
+              Herramienta web para administrar la base de datos de forma visual durante
+              la fase de desarrollo y pruebas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="post-section">
+        <h2>Arquitectura lógica</h2>
+        <p>
+          El diseño separa la aplicación web y la base de datos para mejorar la organización
+          del entorno y facilitar futuras mejoras de seguridad.
+        </p>
+
+        <pre class="code-block"><code>Cliente
+   │
+   ▼
+Servidor Apache / PHP
+   │
+   ▼
+Base de datos MySQL
+   │
+   ▼
+Administración con phpMyAdmin</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Buenas prácticas</h2>
+        <ul class="post-list">
+          <li>No publicar credenciales de base de datos.</li>
+          <li>Separar la documentación pública de la configuración real.</li>
+          <li>No exponer phpMyAdmin sin medidas de seguridad.</li>
+          <li>Usar usuarios con permisos limitados cuando sea posible.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Competencias demostradas</h2>
+        <ul class="post-list">
+          <li>Despliegue de servicios web.</li>
+          <li>Configuración básica de base de datos.</li>
+          <li>Integración entre aplicación y MySQL.</li>
+          <li>Administración de servicios en Linux.</li>
+        </ul>
+      </section>
+
+      <section class="callout">
+        <h2>Conclusión</h2>
+        <p>
+          El despliegue de Apache, MySQL y phpMyAdmin permitió construir la base funcional
+          de la aplicación web del proyecto y conectar la parte de servicios con la parte
+          de infraestructura.
+        </p>
+
+        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mois0n — Portafolio profesional de sistemas, redes y ciberseguridad.</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
