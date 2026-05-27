@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Segmentación de red con IPFire | Mois0n</title>
+  <meta name="description" content="Entrada técnica sobre segmentación de red con IPFire usando zonas RED, GREEN y ORANGE en un entorno virtualizado con Proxmox VE.">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Mois0n</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+        <li><a href="../proyectos.html">Proyectos</a></li>
+        <li><a href="../blog.html">Blog técnico</a></li>
+        <li><a href="../certificaciones.html">Certificaciones</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="post">
+
+      <header class="post-header">
+        <p class="eyebrow">Redes · Firewall · Seguridad</p>
+
+        <h1>Segmentación de red con IPFire: zonas RED, GREEN y ORANGE</h1>
+
+        <p class="post-intro">
+          En esta entrada documento cómo planteé una segmentación de red en un entorno
+          virtualizado utilizando IPFire como firewall principal. El objetivo era separar
+          el tráfico según su función y mejorar la seguridad de la infraestructura.
+        </p>
+
+        <div class="tech-list">
+          <span>IPFire</span>
+          <span>Proxmox VE</span>
+          <span>Firewall</span>
+          <span>DMZ</span>
+          <span>Redes</span>
+          <span>Seguridad</span>
+        </div>
+      </header>
+
+      <section class="post-section">
+        <h2>Objetivo de la segmentación</h2>
+
+        <p>
+          El objetivo principal era evitar que todos los servicios estuvieran en una única
+          red plana. Para ello, se diseñó una separación lógica entre la zona de salida
+          hacia Internet, la red interna y la zona destinada a servicios expuestos o
+          semiexpuestos.
+        </p>
+
+        <p>
+          Esta separación permite aplicar reglas de filtrado más claras, reducir la
+          superficie de exposición y controlar mejor qué tráfico puede circular entre
+          las distintas partes de la infraestructura.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Zonas utilizadas en IPFire</h2>
+
+        <p>
+          IPFire trabaja con un sistema de zonas de red diferenciadas. En este laboratorio
+          se utilizaron principalmente tres:
+        </p>
+
+        <div class="content-grid">
+          <article class="content-card">
+            <h3>RED</h3>
+            <p>
+              Zona asociada a la salida hacia Internet o red externa. Es la parte menos
+              confiable y debe tratarse como el punto de entrada o salida de tráfico.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>GREEN</h3>
+            <p>
+              Zona interna de confianza. Se utiliza para equipos de administración,
+              gestión interna o servicios que no deben estar expuestos directamente.
+            </p>
+          </article>
+
+          <article class="content-card">
+            <h3>ORANGE</h3>
+            <p>
+              Zona tipo DMZ destinada a servicios que necesitan estar más separados
+              de la red interna, como servidores web o servicios accesibles bajo reglas
+              controladas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="post-section">
+        <h2>Planteamiento de arquitectura</h2>
+
+        <p>
+          La infraestructura se planteó sobre Proxmox VE, utilizando máquinas virtuales
+          y contenedores para separar funciones. IPFire actuaba como firewall entre las
+          distintas zonas, permitiendo controlar el tráfico entre redes y servicios.
+        </p>
+
+        <p>
+          El diseño general fue:
+        </p>
+
+        <pre class="code-block"><code>Internet / red externa
+        │
+        ▼
+Zona RED
+        │
+        ▼
+IPFire Firewall
+   ├── Zona GREEN → administración y red interna
+   └── Zona ORANGE → servicios web / DMZ</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Ventajas de este enfoque</h2>
+
+        <ul class="post-list">
+          <li>Separación clara entre red interna, servicios y salida exterior.</li>
+          <li>Mayor control sobre el tráfico entre zonas.</li>
+          <li>Reducción del impacto si un servicio expuesto se ve comprometido.</li>
+          <li>Mejor organización de la infraestructura.</li>
+          <li>Base sólida para aplicar reglas de firewall y futuras mejoras de seguridad.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Buenas prácticas aplicadas</h2>
+
+        <p>
+          Para publicar esta documentación no se incluyen IPs reales, dominios dinámicos,
+          credenciales, reglas exactas sensibles ni capturas que puedan comprometer la
+          infraestructura original. La entrada se centra en explicar el diseño técnico
+          y las competencias demostradas.
+        </p>
+
+        <ul class="post-list">
+          <li>Uso de direcciones e información genérica.</li>
+          <li>Separación entre documentación pública y configuración real.</li>
+          <li>No publicación de credenciales ni archivos de configuración sensibles.</li>
+          <li>Explicación orientada a empleabilidad y aprendizaje técnico.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Qué demuestra este laboratorio</h2>
+
+        <p>
+          Este laboratorio demuestra conocimientos de redes, firewall, segmentación,
+          virtualización e infraestructura segura. También muestra capacidad para
+          documentar decisiones técnicas y transformar una práctica académica en un
+          caso profesional entendible.
+        </p>
+      </section>
+
+      <section class="callout">
+        <h2>Conclusión</h2>
+
+        <p>
+          La segmentación de red es una medida básica pero muy importante dentro de
+          cualquier infraestructura. Separar correctamente las zonas permite controlar
+          mejor los accesos, reducir riesgos y construir una arquitectura más segura,
+          escalable y fácil de mantener.
+        </p>
+
+        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mois0n — Portafolio profesional de sistemas, redes y ciberseguridad.</p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
