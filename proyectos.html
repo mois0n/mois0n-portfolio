@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyectos | Mois0n</title>
-  <meta name="description" content="Proyectos técnicos de Mois0n sobre sistemas, redes, virtualización, cloud y ciberseguridad.">
+  <meta name="description" content="Proyectos técnicos de Mois0n sobre sistemas, redes, virtualización, infraestructura IT, cloud y ciberseguridad.">
 
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -32,8 +32,15 @@
       <h1>Proyectos</h1>
 
       <p>
-        Selección de proyectos técnicos orientados a demostrar competencias profesionales
-        en administración de sistemas, redes, virtualización, infraestructura IT y ciberseguridad.
+        Selección de proyectos técnicos y líneas de aprendizaje orientadas a demostrar
+        competencias profesionales en administración de sistemas, redes, virtualización,
+        infraestructura IT, cloud y ciberseguridad.
+      </p>
+
+      <p>
+        Algunos proyectos están publicados como casos completos, mientras que otros forman
+        parte de una línea de trabajo activa que iré ampliando con laboratorios, documentación
+        técnica y writeups públicos.
       </p>
     </section>
 
@@ -65,12 +72,14 @@
           <p>
             <strong>Qué demuestra:</strong>
             diseño de infraestructura, segmentación de red, despliegue de servicios,
-            seguridad perimetral, automatización y documentación técnica orientada a empleabilidad.
+            seguridad perimetral, automatización, documentación técnica y criterio de
+            publicación segura.
           </p>
 
           <p>
             <strong>Estado:</strong>
-            publicado como caso práctico profesional, sin datos sensibles ni configuraciones reales expuestas.
+            publicado como caso práctico profesional, con memoria pública anonimizada y
+            entradas técnicas relacionadas.
           </p>
         </div>
 
@@ -79,43 +88,194 @@
             Ver proyecto
           </a>
 
+          <a href="assets/pdf/proyectos/memoria-publica-proxmox-ipfire-mois0n.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            Descargar memoria pública
+          </a>
+
           <a href="posts/segmentacion-red-ipfire.html" class="btn btn-secondary">
             Leer entrada relacionada
           </a>
         </div>
       </article>
 
-      <article class="project-card">
-        <h2>Laboratorios de ciberseguridad</h2>
+      <article class="project-card featured">
+        <p class="section-label">Línea activa de ciberseguridad</p>
+
+        <h2>Laboratorios de ciberseguridad y preparación eJPT/eCPPT</h2>
 
         <p>
-          Espacio reservado para prácticas y laboratorios relacionados con análisis,
-          reconocimiento, hardening, vulnerabilidades y metodología eJPT.
+          Línea de trabajo orientada a resolver máquinas vulnerables gratuitas, documentar
+          metodología de enumeración, practicar explotación en entornos controlados y preparar
+          progresivamente el salto desde eJPT hacia eCPPT.
         </p>
 
         <div class="tech-list">
           <span>Nmap</span>
+          <span>Enumeración</span>
+          <span>HTTP</span>
+          <span>SMB</span>
+          <span>FTP</span>
           <span>Linux</span>
-          <span>Hardening</span>
+          <span>Metasploit</span>
           <span>eJPT</span>
+          <span>eCPPT</span>
         </div>
 
-        <p class="project-status">Próximamente</p>
+        <div class="project-info">
+          <p>
+            <strong>Qué demuestra:</strong>
+            metodología de pentesting, organización de evidencias, documentación técnica,
+            análisis de servicios, resolución de laboratorios y preparación orientada a
+            certificaciones prácticas.
+          </p>
+
+          <p>
+            <strong>Estado:</strong>
+            en desarrollo. Actualmente contiene entradas base de metodología y checklist
+            de servicios comunes. Próximamente incluirá writeups de máquinas gratuitas
+            autorizadas.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="posts/metodologia-enumeracion-pentesting.html" class="btn btn-primary">
+            Ver metodología
+          </a>
+
+          <a href="posts/checklist-servicios-pentesting.html" class="btn btn-secondary">
+            Ver checklist
+          </a>
+
+          <a href="blog.html" class="btn btn-secondary">
+            Ver blog técnico
+          </a>
+        </div>
       </article>
 
       <article class="project-card">
-        <h2>Redes y servicios</h2>
+        <p class="section-label">Documentación técnica</p>
+
+        <h2>Blog técnico de sistemas, redes y seguridad</h2>
 
         <p>
-          Proyectos y prácticas relacionados con conectividad, direccionamiento,
-          segmentación, servicios internos y resolución de incidencias.
+          Espacio donde documento configuraciones, problemas encontrados, soluciones,
+          aprendizajes y metodología aplicada a proyectos de infraestructura, servicios
+          y ciberseguridad.
         </p>
 
         <div class="tech-list">
-          <span>Redes</span>
-          <span>Servicios</span>
+          <span>Documentación</span>
+          <span>HTML</span>
+          <span>GitHub</span>
+          <span>Cloudflare Pages</span>
+          <span>Portfolio</span>
+        </div>
+
+        <div class="project-info">
+          <p>
+            <strong>Qué demuestra:</strong>
+            capacidad para explicar procesos técnicos, estructurar conocimiento y convertir
+            proyectos o laboratorios en documentación útil y profesional.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="blog.html" class="btn btn-primary">
+            Ver blog técnico
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <p class="section-label">Servicios web y bases de datos</p>
+
+        <h2>Despliegue de Apache, MySQL y phpMyAdmin</h2>
+
+        <p>
+          Documentación del despliegue de servicios web y base de datos dentro de una
+          infraestructura virtualizada, como parte del proyecto de Proxmox VE e IPFire.
+        </p>
+
+        <div class="tech-list">
+          <span>Apache</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>phpMyAdmin</span>
           <span>Linux</span>
-          <span>Windows</span>
+        </div>
+
+        <div class="project-info">
+          <p>
+            <strong>Qué demuestra:</strong>
+            despliegue de servicios, integración web-base de datos, administración básica
+            de sistemas Linux y documentación de arquitectura de aplicación.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="posts/despliegue-apache-mysql-phpmyadmin.html" class="btn btn-primary">
+            Leer entrada
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <p class="section-label">Automatización</p>
+
+        <h2>Alertas de stock mediante Python</h2>
+
+        <p>
+          Automatización de comprobaciones sobre una base de datos para detectar productos
+          con bajo stock y generar avisos, integrando scripting con servicios desplegados.
+        </p>
+
+        <div class="tech-list">
+          <span>Python</span>
+          <span>MySQL</span>
+          <span>Automatización</span>
+          <span>Linux</span>
+        </div>
+
+        <div class="project-info">
+          <p>
+            <strong>Qué demuestra:</strong>
+            automatización de tareas, conexión con base de datos, lógica de control y
+            resolución de necesidades prácticas mediante scripting.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="posts/automatizacion-stock-python.html" class="btn btn-primary">
+            Leer entrada
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <p class="section-label">Próximos proyectos</p>
+
+        <h2>Kubernetes, despliegue web e infraestructura moderna</h2>
+
+        <p>
+          Próxima línea de trabajo orientada a documentar despliegues de aplicaciones web
+          en Kubernetes, servicios, Ingress, balanceo, contenedores y exposición controlada
+          de aplicaciones.
+        </p>
+
+        <div class="tech-list">
+          <span>Kubernetes</span>
+          <span>Docker</span>
+          <span>Ingress</span>
+          <span>Servicios</span>
+          <span>Cloud</span>
+        </div>
+
+        <div class="project-info">
+          <p>
+            <strong>Estado:</strong>
+            pendiente de publicación. Será el siguiente bloque fuerte para reforzar perfil
+            de sistemas, infraestructura y cloud.
+          </p>
         </div>
 
         <p class="project-status">Próximamente</p>
