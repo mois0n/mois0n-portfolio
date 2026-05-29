@@ -275,13 +275,14 @@ main {
 .page-hero p {
   color: #cbd5e1;
   font-size: 1.12rem;
+  margin-bottom: 1rem;
 }
 
 .content-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.3rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin: 3rem 0;
 }
 
 .content-card,
@@ -375,6 +376,7 @@ main {
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: var(--shadow);
+  margin-bottom: 3rem;
 }
 
 .contact-card h2 {
@@ -611,5 +613,13 @@ main {
 
   .availability-box {
     padding: 1rem;
+  }
+
+  .contact-card {
+    margin-bottom: 2rem;
+  }
+
+  .content-grid {
+    margin: 2.5rem 0;
   }
 }
