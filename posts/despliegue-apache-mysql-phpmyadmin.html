@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Apache, MySQL y phpMyAdmin | Mois0n</title>
-  <meta name="description" content="Entrada técnica sobre el despliegue de Apache, MySQL y phpMyAdmin en una infraestructura virtualizada.">
+  <title>Despliegue de Apache, MySQL y phpMyAdmin | Mois0n</title>
+  <meta name="description" content="Despliegue de servicios web con Apache, MySQL y phpMyAdmin dentro de una infraestructura virtualizada.">
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -14,6 +14,12 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="../index.html" class="logo">Mois0n</a>
+
+      <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <ul class="nav-links">
         <li><a href="../index.html">Inicio</a></li>
@@ -27,117 +33,110 @@
   </header>
 
   <main>
+
     <article class="post">
 
       <header class="post-header">
-        <p class="eyebrow">Servicios web · Base de datos</p>
+        <p class="eyebrow">Servicios web · Linux · Base de datos</p>
+
         <h1>Despliegue de Apache, MySQL y phpMyAdmin</h1>
 
         <p class="post-intro">
-          En esta entrada documento el planteamiento de los servicios web y de base de
-          datos utilizados para alojar una aplicación web dentro de una infraestructura
-          virtualizada.
+          Esta entrada documenta el despliegue de servicios web y base de datos dentro
+          de una infraestructura virtualizada orientada a laboratorio profesional.
         </p>
 
         <div class="tech-list">
           <span>Apache</span>
+          <span>PHP</span>
           <span>MySQL</span>
           <span>phpMyAdmin</span>
           <span>Linux</span>
-          <span>PHP</span>
         </div>
       </header>
 
-      <section class="post-section">
+      <section class="callout">
         <h2>Objetivo</h2>
+
         <p>
-          El objetivo era desplegar una aplicación web conectada a una base de datos,
-          separando los servicios y permitiendo su administración dentro de un entorno
-          de laboratorio controlado.
+          El objetivo fue desplegar una base funcional para una aplicación web, separando
+          los servicios necesarios y documentando su papel dentro de la infraestructura.
         </p>
       </section>
 
       <section class="post-section">
-        <h2>Servicios utilizados</h2>
+        <h2>Componentes desplegados</h2>
 
-        <div class="content-grid">
-          <article class="content-card">
-            <h3>Apache</h3>
-            <p>
-              Servidor web utilizado para servir la aplicación desarrollada en PHP,
-              HTML y CSS.
-            </p>
-          </article>
-
-          <article class="content-card">
-            <h3>MySQL</h3>
-            <p>
-              Sistema gestor de base de datos utilizado para almacenar usuarios,
-              productos, compras y datos de la aplicación.
-            </p>
-          </article>
-
-          <article class="content-card">
-            <h3>phpMyAdmin</h3>
-            <p>
-              Herramienta web para administrar la base de datos de forma visual durante
-              la fase de desarrollo y pruebas.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="post-section">
-        <h2>Arquitectura lógica</h2>
-        <p>
-          El diseño separa la aplicación web y la base de datos para mejorar la organización
-          del entorno y facilitar futuras mejoras de seguridad.
-        </p>
-
-        <pre class="code-block"><code>Cliente
-   │
-   ▼
-Servidor Apache / PHP
-   │
-   ▼
-Base de datos MySQL
-   │
-   ▼
-Administración con phpMyAdmin</code></pre>
-      </section>
-
-      <section class="post-section">
-        <h2>Buenas prácticas</h2>
         <ul class="post-list">
-          <li>No publicar credenciales de base de datos.</li>
-          <li>Separar la documentación pública de la configuración real.</li>
-          <li>No exponer phpMyAdmin sin medidas de seguridad.</li>
-          <li>Usar usuarios con permisos limitados cuando sea posible.</li>
+          <li><strong>Apache:</strong> servidor web encargado de publicar la aplicación.</li>
+          <li><strong>PHP:</strong> lenguaje utilizado para la lógica de la aplicación.</li>
+          <li><strong>MySQL:</strong> sistema gestor de base de datos.</li>
+          <li><strong>phpMyAdmin:</strong> herramienta web para administrar la base de datos durante el desarrollo.</li>
         </ul>
       </section>
 
       <section class="post-section">
-        <h2>Competencias demostradas</h2>
+        <h2>Arquitectura lógica</h2>
+
+        <pre class="code-block"><code>Usuario / Navegador
+        │
+        ▼
+Servidor Apache + PHP
+        │
+        ▼
+Base de datos MySQL
+        │
+        ▼
+Administración mediante phpMyAdmin</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Qué demuestra este despliegue</h2>
+
         <ul class="post-list">
-          <li>Despliegue de servicios web.</li>
-          <li>Configuración básica de base de datos.</li>
-          <li>Integración entre aplicación y MySQL.</li>
-          <li>Administración de servicios en Linux.</li>
+          <li>Instalación y configuración básica de servicios Linux.</li>
+          <li>Despliegue de una aplicación web.</li>
+          <li>Integración entre servidor web y base de datos.</li>
+          <li>Administración de MySQL mediante phpMyAdmin.</li>
+          <li>Documentación de servicios dentro de una infraestructura.</li>
+        </ul>
+      </section>
+
+      <section class="post-section">
+        <h2>Consideraciones de seguridad</h2>
+
+        <p>
+          En un entorno real, phpMyAdmin no debería quedar expuesto públicamente sin
+          controles adicionales. Es recomendable restringir acceso, usar credenciales
+          fuertes, HTTPS y reglas de firewall.
+        </p>
+
+        <ul class="post-list">
+          <li>Restringir acceso a paneles de administración.</li>
+          <li>Usar contraseñas robustas.</li>
+          <li>Separar servicios críticos por red o contenedor.</li>
+          <li>Aplicar actualizaciones de seguridad.</li>
+          <li>No publicar credenciales ni configuraciones sensibles.</li>
         </ul>
       </section>
 
       <section class="callout">
         <h2>Conclusión</h2>
+
         <p>
-          El despliegue de Apache, MySQL y phpMyAdmin permitió construir la base funcional
-          de la aplicación web del proyecto y conectar la parte de servicios con la parte
-          de infraestructura.
+          Este despliegue sirve como base para entender cómo se conectan los servicios
+          clásicos de una aplicación web y cómo documentarlos dentro de un proyecto de
+          infraestructura IT.
         </p>
 
-        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+        <div class="hero-buttons">
+          <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+          <a href="../proyectos/infraestructura-proxmox-ipfire.html" class="btn btn-secondary">Ver proyecto</a>
+        </div>
       </section>
 
     </article>
+
   </main>
 
   <footer class="site-footer">
