@@ -1,6 +1,6 @@
 # Mois0n Portfolio
 
-Portafolio profesional de Moisés Cuevas Gómez, Técnico ASIR especializado en infraestructura IT, redes, virtualización y ciberseguridad.
+Portfolio profesional de Moisés Cuevas Gómez, Técnico ASIR especializado en infraestructura IT, redes, virtualización y ciberseguridad.
 
 Web: https://mois0n.pages.dev
 
