@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Automatización de stock con Python | Mois0n</title>
-  <meta name="description" content="Entrada técnica sobre automatización de control de stock mediante Python y MySQL.">
+  <meta name="description" content="Automatización de comprobaciones de stock mediante Python y MySQL dentro de una infraestructura IT virtualizada.">
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -14,6 +14,12 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="../index.html" class="logo">Mois0n</a>
+
+      <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <ul class="nav-links">
         <li><a href="../index.html">Inicio</a></li>
@@ -27,16 +33,17 @@
   </header>
 
   <main>
+
     <article class="post">
 
       <header class="post-header">
         <p class="eyebrow">Automatización · Python · MySQL</p>
-        <h1>Automatización de alertas de stock con Python</h1>
+
+        <h1>Automatización de alertas de stock mediante Python</h1>
 
         <p class="post-intro">
-          En esta entrada explico cómo planteé una automatización para comprobar el
-          stock de productos en una base de datos y generar avisos cuando las unidades
-          bajaban de un umbral definido.
+          En esta entrada documento una parte del proyecto de infraestructura en la que se
+          utiliza Python para consultar una base de datos MySQL y detectar productos con bajo stock.
         </p>
 
         <div class="tech-list">
@@ -44,26 +51,36 @@
           <span>MySQL</span>
           <span>Automatización</span>
           <span>Linux</span>
-          <span>Cron</span>
+          <span>Infraestructura IT</span>
         </div>
       </header>
 
-      <section class="post-section">
+      <section class="callout">
         <h2>Objetivo</h2>
+
         <p>
-          El objetivo era evitar una revisión manual constante del inventario. Para ello,
-          se planteó un script que consultara la base de datos y detectara productos con
-          bajo stock.
+          El objetivo de esta automatización es demostrar cómo un script puede integrarse
+          con una base de datos para revisar información de forma periódica y generar avisos
+          cuando se cumpla una condición concreta.
         </p>
       </section>
 
       <section class="post-section">
-        <h2>Funcionamiento general</h2>
+        <h2>Contexto del proyecto</h2>
+
         <p>
-          El script realiza una consulta sobre la base de datos, identifica productos
-          que cumplen la condición de bajo stock y genera un registro o aviso para su
-          posterior revisión.
+          Dentro de la infraestructura se desplegó una aplicación web conectada a una base
+          de datos MySQL. Esta base de datos almacena productos y unidades disponibles.
         </p>
+
+        <p>
+          Para añadir una capa de automatización, se planteó un script que consulta los
+          productos y detecta aquellos cuyo stock baja de un umbral definido.
+        </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Flujo de funcionamiento</h2>
 
         <pre class="code-block"><code>Base de datos MySQL
         │
@@ -71,59 +88,73 @@
 Script Python
         │
         ▼
+Consulta de productos
+        │
+        ▼
 Comprobación de stock
         │
         ▼
-Registro de alerta / aviso</code></pre>
+Generación de aviso</code></pre>
       </section>
 
       <section class="post-section">
-        <h2>Ventajas de automatizar</h2>
+        <h2>Qué demuestra esta parte</h2>
+
         <ul class="post-list">
-          <li>Reduce tareas manuales repetitivas.</li>
-          <li>Permite detectar incidencias antes.</li>
-          <li>Mejora el control del inventario.</li>
-          <li>Demuestra integración entre scripting y base de datos.</li>
+          <li>Uso básico de Python para automatizar tareas.</li>
+          <li>Conexión entre script y base de datos.</li>
+          <li>Consulta de información almacenada en MySQL.</li>
+          <li>Aplicación de lógica condicional.</li>
+          <li>Integración de automatización dentro de una infraestructura IT.</li>
         </ul>
       </section>
 
       <section class="post-section">
-        <h2>Buenas prácticas de seguridad</h2>
+        <h2>Ejemplo de lógica</h2>
+
+        <pre class="code-block"><code># Ejemplo simplificado de lógica
+
+umbral_stock = 5
+
+for producto in productos:
+    if producto["stock"] < umbral_stock:
+        print("Producto con bajo stock:", producto["nombre"])</code></pre>
+
         <p>
-          En una publicación pública no se deben mostrar credenciales reales, cadenas de
-          conexión completas, usuarios de base de datos ni rutas internas sensibles.
+          En un entorno real, este aviso podría enviarse por correo, Telegram, sistema de
+          tickets o integrarse con herramientas de monitorización.
         </p>
-
-        <ul class="post-list">
-          <li>No publicar contraseñas de MySQL.</li>
-          <li>Usar variables de entorno o archivos protegidos.</li>
-          <li>Limitar permisos del usuario de base de datos.</li>
-          <li>Registrar eventos sin exponer información sensible.</li>
-        </ul>
       </section>
 
       <section class="post-section">
-        <h2>Competencias demostradas</h2>
+        <h2>Buenas prácticas</h2>
+
         <ul class="post-list">
-          <li>Scripting básico con Python.</li>
-          <li>Consultas a base de datos MySQL.</li>
-          <li>Automatización de tareas.</li>
-          <li>Planificación de procesos programados.</li>
+          <li>No guardar credenciales directamente en el código.</li>
+          <li>Separar configuración y lógica del script.</li>
+          <li>Registrar errores y resultados.</li>
+          <li>Ejecutar el script con permisos mínimos.</li>
+          <li>Documentar el funcionamiento y las dependencias.</li>
         </ul>
       </section>
 
       <section class="callout">
         <h2>Conclusión</h2>
+
         <p>
-          La automatización del control de stock aporta valor porque conecta la aplicación
-          web con procesos automáticos de supervisión, acercando el proyecto a un caso
-          práctico más realista.
+          Esta automatización demuestra cómo una necesidad sencilla puede resolverse mediante
+          scripting, conectando servicios desplegados dentro de una infraestructura y aportando
+          valor práctico a la administración del entorno.
         </p>
 
-        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+        <div class="hero-buttons">
+          <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+          <a href="../proyectos/infraestructura-proxmox-ipfire.html" class="btn btn-secondary">Ver proyecto</a>
+        </div>
       </section>
 
     </article>
+
   </main>
 
   <footer class="site-footer">
