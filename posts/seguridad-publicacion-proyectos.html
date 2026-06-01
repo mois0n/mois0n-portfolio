@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Publicación segura de proyectos técnicos | Mois0n</title>
-  <meta name="description" content="Entrada sobre buenas prácticas para publicar proyectos técnicos sin exponer información sensible.">
+  <meta name="description" content="Buenas prácticas para publicar proyectos técnicos en un portfolio sin exponer información sensible.">
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -14,6 +14,12 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="../index.html" class="logo">Mois0n</a>
+
+      <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <ul class="nav-links">
         <li><a href="../index.html">Inicio</a></li>
@@ -27,81 +33,109 @@
   </header>
 
   <main>
+
     <article class="post">
 
       <header class="post-header">
         <p class="eyebrow">Seguridad · Portfolio · Buenas prácticas</p>
-        <h1>Cómo publicar proyectos técnicos sin exponer información sensible</h1>
+
+        <h1>Publicación segura de proyectos técnicos</h1>
 
         <p class="post-intro">
-          Cuando un proyecto técnico se publica en un portfolio, no basta con que sea
-          funcional. También debe revisarse para evitar exponer datos que puedan afectar
-          a la seguridad del entorno original.
+          Publicar proyectos técnicos en un portfolio puede aportar mucho valor profesional,
+          pero también requiere revisar qué información se muestra y qué datos conviene ocultar.
         </p>
 
         <div class="tech-list">
           <span>Seguridad</span>
-          <span>Documentación</span>
-          <span>GitHub</span>
           <span>Portfolio</span>
+          <span>GitHub</span>
+          <span>Buenas prácticas</span>
+          <span>Documentación</span>
         </div>
       </header>
 
-      <section class="post-section">
-        <h2>Por qué es importante</h2>
+      <section class="callout">
+        <h2>Objetivo</h2>
+
         <p>
-          Los proyectos de sistemas, redes y ciberseguridad suelen incluir capturas,
-          configuraciones, direcciones IP, rutas internas, reglas de firewall o detalles
-          de servicios. Publicarlos sin revisar puede revelar información innecesaria.
+          El objetivo es mostrar competencias técnicas sin exponer datos sensibles,
+          configuraciones reales o información que pueda comprometer un entorno.
         </p>
       </section>
 
       <section class="post-section">
-        <h2>Información que no conviene publicar</h2>
+        <h2>Qué no debería publicarse</h2>
 
         <ul class="post-list">
-          <li>Contraseñas, tokens o claves privadas.</li>
-          <li>IPs públicas reales o dominios dinámicos antiguos.</li>
-          <li>Reglas completas de firewall que describan un entorno real.</li>
-          <li>Capturas con usuarios, correos, rutas internas o datos personales.</li>
-          <li>Backups de bases de datos o archivos de configuración reales.</li>
+          <li>Credenciales, tokens o claves privadas.</li>
+          <li>Direcciones IP públicas reales.</li>
+          <li>Dominios dinámicos antiguos o activos.</li>
+          <li>Capturas con usuarios, correos o rutas internas.</li>
+          <li>Reglas exactas de firewall si pertenecen a un entorno real.</li>
+          <li>Configuraciones completas de routers, VPN o NAT.</li>
+          <li>Datos personales o académicos innecesarios.</li>
         </ul>
       </section>
 
       <section class="post-section">
-        <h2>Qué sí se puede publicar</h2>
+        <h2>Cómo publicar de forma segura</h2>
 
         <ul class="post-list">
-          <li>Diagramas simplificados.</li>
-          <li>Explicaciones técnicas anonimizadas.</li>
-          <li>IPs de laboratorio o ejemplos genéricos.</li>
-          <li>Capturas recortadas y revisadas.</li>
-          <li>Comandos y configuraciones sin datos sensibles.</li>
+          <li>Crear una versión pública y anonimizada del proyecto.</li>
+          <li>Usar diagramas simplificados.</li>
+          <li>Reemplazar IPs reales por rangos de ejemplo.</li>
+          <li>Eliminar capturas sensibles.</li>
+          <li>Explicar la arquitectura sin publicar secretos.</li>
+          <li>Revisar el contenido antes de subirlo a GitHub.</li>
         </ul>
       </section>
 
       <section class="post-section">
-        <h2>Enfoque usado en este portfolio</h2>
-        <p>
-          En este portfolio los proyectos se transforman en casos prácticos profesionales:
-          se explica el objetivo, la arquitectura, las tecnologías utilizadas, los problemas
-          encontrados y las competencias demostradas, evitando publicar información que
-          comprometa el entorno original.
-        </p>
+        <h2>Ejemplo de anonimización</h2>
+
+        <pre class="code-block"><code># Evitar publicar esto:
+192.168.1.25
+usuario-admin-real
+dominio-dinamico-real.example
+
+# Mejor usar:
+IP interna anonimizada
+usuario de ejemplo
+dominio no publicado</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Qué sí aporta valor</h2>
+
+        <ul class="post-list">
+          <li>Objetivo del proyecto.</li>
+          <li>Tecnologías utilizadas.</li>
+          <li>Arquitectura general.</li>
+          <li>Problemas encontrados.</li>
+          <li>Soluciones aplicadas.</li>
+          <li>Competencias demostradas.</li>
+          <li>Mejoras futuras.</li>
+        </ul>
       </section>
 
       <section class="callout">
         <h2>Conclusión</h2>
+
         <p>
-          Publicar proyectos técnicos de forma segura demuestra no solo conocimientos,
-          sino también criterio profesional. Saber qué enseñar y qué ocultar es parte
-          importante de trabajar en sistemas, redes y ciberseguridad.
+          Un buen portfolio técnico no necesita revelar información sensible para demostrar
+          valor. Lo importante es explicar el razonamiento, la arquitectura, las decisiones
+          técnicas y las competencias desarrolladas.
         </p>
 
-        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+        <div class="hero-buttons">
+          <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+          <a href="../proyectos.html" class="btn btn-secondary">Ver proyectos</a>
+        </div>
       </section>
 
     </article>
+
   </main>
 
   <footer class="site-footer">
