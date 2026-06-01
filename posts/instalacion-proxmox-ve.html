@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Instalación de Proxmox VE | Mois0n</title>
-  <meta name="description" content="Entrada técnica sobre la instalación de Proxmox VE como base de una infraestructura virtualizada.">
+  <meta name="description" content="Instalación de Proxmox VE como base de laboratorio para virtualización, servicios e infraestructura IT.">
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -14,6 +14,12 @@
   <header class="site-header">
     <nav class="navbar">
       <a href="../index.html" class="logo">Mois0n</a>
+
+      <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <ul class="nav-links">
         <li><a href="../index.html">Inicio</a></li>
@@ -27,15 +33,17 @@
   </header>
 
   <main>
+
     <article class="post">
 
       <header class="post-header">
-        <p class="eyebrow">Virtualización · Infraestructura</p>
+        <p class="eyebrow">Virtualización · Proxmox VE · Infraestructura</p>
+
         <h1>Instalación de Proxmox VE como base de laboratorio</h1>
 
         <p class="post-intro">
-          Proxmox VE fue la base elegida para desplegar una infraestructura virtualizada
-          donde separar servicios, redes y funciones de seguridad.
+          Proxmox VE fue la base utilizada para construir un entorno de laboratorio donde
+          desplegar máquinas virtuales, contenedores, servicios web, base de datos y firewall.
         </p>
 
         <div class="tech-list">
@@ -46,68 +54,77 @@
         </div>
       </header>
 
-      <section class="post-section">
+      <section class="callout">
         <h2>Objetivo</h2>
+
         <p>
-          El objetivo era disponer de una plataforma de virtualización flexible para
-          crear máquinas virtuales y contenedores, separando servicios como firewall,
-          servidor web, base de datos y automatización.
+          El objetivo de usar Proxmox VE fue disponer de una plataforma de virtualización
+          centralizada para crear y gestionar los distintos componentes del proyecto.
         </p>
       </section>
 
       <section class="post-section">
         <h2>Por qué Proxmox VE</h2>
+
         <p>
-          Proxmox VE permite gestionar máquinas virtuales y contenedores desde una
-          interfaz web, facilitando la administración de recursos, redes virtuales,
-          almacenamiento y servicios desplegados.
+          Proxmox VE permite crear máquinas virtuales y contenedores, gestionar redes
+          virtuales, almacenamiento y recursos desde una interfaz web. Esto lo convierte
+          en una buena base para laboratorios de sistemas, redes y seguridad.
         </p>
+      </section>
+
+      <section class="post-section">
+        <h2>Rol dentro del proyecto</h2>
+
+        <pre class="code-block"><code>Servidor físico
+   └── Proxmox VE
+        ├── IPFire
+        ├── Servidor web
+        ├── Base de datos
+        ├── phpMyAdmin
+        └── Contenedor de automatización</code></pre>
+      </section>
+
+      <section class="post-section">
+        <h2>Qué demuestra esta parte</h2>
 
         <ul class="post-list">
-          <li>Permite trabajar con máquinas virtuales y contenedores.</li>
-          <li>Facilita la creación de laboratorios técnicos.</li>
-          <li>Ofrece una interfaz de administración clara.</li>
-          <li>Encaja bien con proyectos de sistemas, redes y seguridad.</li>
+          <li>Instalación y uso de una plataforma de virtualización.</li>
+          <li>Organización de servicios por máquinas o contenedores.</li>
+          <li>Gestión de recursos básicos.</li>
+          <li>Diseño de redes virtuales.</li>
+          <li>Base para desplegar una infraestructura segura.</li>
         </ul>
       </section>
 
       <section class="post-section">
-        <h2>Planteamiento del entorno</h2>
-        <p>
-          La instalación se planteó sobre un equipo físico usado como servidor de
-          laboratorio. Desde Proxmox se desplegaron los distintos elementos del proyecto:
-          firewall, servicios web, base de datos y contenedores auxiliares.
-        </p>
+        <h2>Buenas prácticas</h2>
 
-        <pre class="code-block"><code>Servidor físico
-   └── Proxmox VE
-        ├── Firewall IPFire
-        ├── Servidor web
-        ├── Base de datos
-        └── Contenedor para automatización</code></pre>
-      </section>
-
-      <section class="post-section">
-        <h2>Competencias demostradas</h2>
         <ul class="post-list">
-          <li>Instalación de un hipervisor de virtualización.</li>
-          <li>Planificación de recursos hardware.</li>
-          <li>Organización de servicios mediante máquinas y contenedores.</li>
-          <li>Base para segmentación de red y despliegue seguro.</li>
+          <li>Separar servicios críticos.</li>
+          <li>Nombrar máquinas de forma clara.</li>
+          <li>Documentar redes y funciones.</li>
+          <li>Realizar copias o snapshots antes de cambios importantes.</li>
+          <li>No exponer la administración sin protección.</li>
         </ul>
       </section>
 
       <section class="callout">
         <h2>Conclusión</h2>
+
         <p>
-          Proxmox VE permitió construir un entorno controlado, flexible y escalable
-          para desplegar el resto de la infraestructura del proyecto.
+          Proxmox VE permitió construir una infraestructura flexible y ordenada, facilitando
+          el despliegue de servicios y la segmentación del entorno de laboratorio.
         </p>
 
-        <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+        <div class="hero-buttons">
+          <a href="../blog.html" class="btn btn-primary">Volver al blog</a>
+          <a href="../proyectos/infraestructura-proxmox-ipfire.html" class="btn btn-secondary">Ver proyecto</a>
+        </div>
       </section>
 
     </article>
+
   </main>
 
   <footer class="site-footer">
